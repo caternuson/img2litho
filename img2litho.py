@@ -38,7 +38,7 @@ print(f"lithophane size = {WMM}x{HMM} mm")
 def pix2mm(ix, iy):
     xmm = ix / PMM
     ymm = iy / PMM
-    zmm = ZMIN + (img.getpixel((ix,iy))/255)*(ZMAX - ZMIN)
+    zmm = ZMAX - (img.getpixel((ix,iy))/255)*(ZMAX - ZMIN)
     return (xmm, ymm, zmm)
 
 # loop over image pixels and create lithophane surface
